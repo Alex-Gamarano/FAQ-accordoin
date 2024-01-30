@@ -1,0 +1,125 @@
+:root {
+  font-size: 62.5%;
+}
+
+@font-face {
+  font-family: "Work Sans";
+  src: url(./assets/fonts/WorkSans-VariableFont_wght.ttf);
+}
+body {
+  margin: 0;
+  width: 100dvw;
+  font-family: "Work Sans";
+  background-image: url("./assets/images/background-pattern-mobile.svg");
+  background-color: hsl(275, 100%, 97%);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.card {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+  width: 80%;
+  margin: auto;
+  margin-top: 140px;
+  border-radius: 7.5px;
+  box-sizing: border-box;
+  padding: 30px;
+}
+
+.question:hover {
+  color: hsl(228, 45%, 44%);
+  cursor: pointer;
+}
+.star {
+  height: 20px;
+  width: 20px;
+  margin-right: 15px;
+  background-image: url("./assets/images/icon-star.svg");
+  background-repeat: none;
+  background-position: center;
+  background-size: cover;
+  display: inline-block;
+}
+h1 {
+  font-size: 2.7rem;
+}
+h1,
+h2 {
+  display: inline;
+}
+p {
+  font-size: 1.25rem;
+}
+.question {
+  grid-area: header;
+  font-size: 1.2rem;
+}
+.plus {
+  height: 30px;
+  width: 30px;
+  margin-right: 15px;
+  background-image: url("./assets/images/icon-plus.svg");
+  background-repeat: none;
+  background-position: center;
+  background-size: cover;
+  display: inline-block;
+  grid-area: btn;
+  align-self: center;
+  justify-self: end;
+  transition: all 300ms ease-in-out;
+}
+.plus:hover {
+  cursor: pointer;
+}
+
+.minus {
+  background-image: url("./assets/images/icon-minus.svg");
+  transition: all 300ms ease-in-out;
+}
+.collapsible {
+  grid-area: msg;
+  margin: 0;
+  max-height: 0;
+  opacity: 0;
+  transition: all 300ms ease-out;
+}
+.collapse {
+  display: block;
+  max-height: fit-content;
+  opacity: 1;
+}
+
+.group {
+  display: grid;
+  grid-template-areas:
+    "header header header header btn"
+    "msg msg msg msg msg";
+  column-gap: 5px;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (width>430px) {
+  body {
+    max-width: 1440px;
+    background-image: url("./assets/images/background-pattern-desktop.svg");
+  }
+
+  .card {
+    width: 540px;
+  }
+  .question {
+    font-size: 1.6rem;
+  }
+}
+
+footer {
+  position: relative;
+
+  bottom: -100px;
+}
