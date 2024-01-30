@@ -7,7 +7,7 @@
   src: url(./assets/fonts/WorkSans-VariableFont_wght.ttf);
 }
 body {
-  margin: 0;
+  margin: auto;
   width: 100dvw;
   font-family: "Work Sans";
   background-image: url("./assets/images/background-pattern-mobile.svg");
