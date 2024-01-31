@@ -72,7 +72,7 @@ main {
 }
 
 .group:hover {
-  color: purple;
+  color: hsl(292, 16%, 49%)
   cursor: pointer;
 }
 
@@ -93,8 +93,9 @@ h2 {
 .question {
   grid-area: header;
   font-size: 1.566rem;
-
-  color: hsl(292, 42%, 14%);
+}
+.question:hover{
+  color: hsl(292, 16%, 49%);
 }
 .plus {
   height: 30px;
@@ -109,8 +110,11 @@ h2 {
   justify-self: end;
   transition: all 300ms ease-in-out;
 }
+.plus:hover{
+  transform: rotate(180deg);
+}
 
-.minus {
+.minus {  
   background-image: url("./assets/images/icon-minus.svg");
   transition: all 300ms ease-in-out;
 }
