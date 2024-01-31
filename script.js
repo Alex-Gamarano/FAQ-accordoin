@@ -1,14 +1,9 @@
-let btns = document.querySelectorAll(".plus");
+let btns = document.querySelectorAll(".group");
 
 btns.forEach((item) =>
   item.addEventListener("click", function () {
-    this.classList.toggle("minus");
-    this.nextElementSibling.classList.toggle("collapse");
+    let children = this.children;
+    children[1].classList.toggle("minus");
+    children[2].classList.toggle("collapse");
   })
 );
-
-/* collapsibles.forEach((item) =>
-  item.addEventListener("click", function () {
-    this.classList.toggle("collapsible--expanded");
-  })
-); */

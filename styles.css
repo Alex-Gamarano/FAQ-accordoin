@@ -14,25 +14,39 @@ body {
   background-color: hsl(275, 100%, 97%);
   background-repeat: no-repeat;
   background-size: contain;
+  display: flex;
+  flex-direction: column;
 }
+header {
+  padding: 30px 20px 0px;
+  display: flex;
+  align-items: center;
+}
+
 .card {
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-  width: 80%;
+  width: 325px;
   margin: auto;
-  margin-top: 140px;
+  margin-top: 37vw;
   border-radius: 7.5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+main {
   box-sizing: border-box;
-  padding: 30px;
+  width: 325px;
+  margin: auto;
+  padding: 0px 20px 20px;
+  display: flex;
+  flex-direction: column;
 }
 
-.question:hover {
-  color: hsl(228, 45%, 44%);
-  cursor: pointer;
-}
 .star {
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 25px;
   margin-right: 15px;
   background-image: url("./assets/images/icon-star.svg");
   background-repeat: none;
@@ -40,24 +54,51 @@ body {
   background-size: cover;
   display: inline-block;
 }
+
+.group {
+  font-family: "Work Sans";
+  background-color: white;
+  width: 285px;
+  min-height: 65px;
+  border: none;
+  text-align: left;
+  overflow: hidden;
+  align-content: center;
+  display: grid;
+  grid-template-areas:
+    "header header header header btn"
+    "msg msg msg msg msg";
+  column-gap: 5px;
+}
+
+.group:hover {
+  color: purple;
+  cursor: pointer;
+}
+
+hr {
+  width: 285px;
+  margin: 5px 0;
+  color: red;
+}
+
 h1 {
-  font-size: 2.7rem;
+  font-size: 3rem;
+  margin: 0;
 }
 h1,
 h2 {
   display: inline;
 }
-p {
-  font-size: 1.25rem;
-}
 .question {
   grid-area: header;
-  font-size: 1.2rem;
+  font-size: 1.566rem;
+
+  color: hsl(292, 42%, 14%);
 }
 .plus {
   height: 30px;
   width: 30px;
-  margin-right: 15px;
   background-image: url("./assets/images/icon-plus.svg");
   background-repeat: none;
   background-position: center;
@@ -68,9 +109,6 @@ p {
   justify-self: end;
   transition: all 300ms ease-in-out;
 }
-.plus:hover {
-  cursor: pointer;
-}
 
 .minus {
   background-image: url("./assets/images/icon-minus.svg");
@@ -79,6 +117,10 @@ p {
 .collapsible {
   grid-area: msg;
   margin: 0;
+  color: hsl(292, 16%, 49%);
+  line-height: 2rem;
+  font-weight: 500;
+  font-size: 1.4rem;
   max-height: 0;
   opacity: 0;
   transition: all 300ms ease-out;
@@ -87,15 +129,9 @@ p {
   display: block;
   max-height: fit-content;
   opacity: 1;
+  padding-bottom: 20px;
 }
 
-.group {
-  display: grid;
-  grid-template-areas:
-    "header header header header btn"
-    "msg msg msg msg msg";
-  column-gap: 5px;
-}
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -104,17 +140,50 @@ p {
   color: hsl(228, 45%, 44%);
 }
 
-@media screen and (width>430px) {
+@media screen and (width> 765px) {
   body {
     max-width: 1440px;
     background-image: url("./assets/images/background-pattern-desktop.svg");
   }
 
   .card {
+    width: 600px;
+    margin-top: 100px;
+  }
+  header {
+    padding: 30px;
+  }
+
+  .star {
+    height: 40px;
+    width: 40px;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+  main {
+    width: 600px;
+  }
+  .group {
     width: 540px;
+    align-self: center;
   }
   .question {
     font-size: 1.6rem;
+  }
+  .collapsible {
+    font-size: 1.6rem;
+  }
+  hr {
+    width: 500px;
+    align-self: center;
+  }
+}
+
+@media screen and (width> 1024px) {
+  .card {
+    margin-top: 180px;
   }
 }
 
